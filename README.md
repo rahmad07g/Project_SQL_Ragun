@@ -1,14 +1,14 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=8273679&assignment_repo_type=AssignmentRepo)
 
-# SQL Project Pacmann - Super Cashier!
-**This is a part or journey of the Pacmann bootcamp**
+# Pacmann - Relational Database & SQL Project!
+**This is a part or journey of the Pacmann Bootcamp**
 
 <p align="center">
   <img src="JPEG/Header.jpg" width=800 align="center">
 </p>
 <h1 align="center">Hi Mate👋, I am Rahmad Gunawan 
 from SDE Batch 01 Pacmann</h1>
-<h3 align="center">Python Project I </h3>
+<h3 align="center">Relational Database & SQL Project</h3>
 
 By [Rahmad Gunawan](https://www.linkedin.com/in/ragunnn/)
 ## Dashboard
@@ -60,28 +60,74 @@ Overall, this project aims to create a robust database schema and use the data t
  ## ERD Table Design
 
   <p align="center">
-  <img src="ERD.png" width=700 align="center">
+  <img src="ERD.jpg" width=700 align="center">
   
  </p>
+ 
+ ## Designing The Database:
+    
+    - Identify the entities: We have identified seven entities: Location, Product, User_seller, User_buyer, Bid_buyer, Advertisement, and Interest.
+    - Create tables: We will create tables for each entity, following the data structure provided for each entity.
+    - Define primary keys: For each table, we will define a primary key. The primary key uniquely identifies each row in the table.
+    - Define foreign keys: We will define foreign keys in tables where one table needs to reference another table. For example,
+     the User_seller and User_buyer tables have a foreign key referencing the Location table.
+    - Define table relationships: We will define the relationships between tables based on the data structure. For example, the Product table 
+    has a one-to-many relationship with the Advertisement and Bid_buyer tables, and the User_buyer table has a one-to-many relationship with 
+    the Bid_buyer and Interest tables.
+    - Implement table constraints: We will implement constraints to ensure data integrity, such as requiring non-null values for certain columns.
+    - Populate the database: We can now populate the database with data.
 
-    1. The first step is to import libraries: 'sqlite3'.
-      Then, we establish a connection to a SQLite database called 'cashier.db' and check if the 'transaction' 
-      table exists. If it doesn't exist, we create the table with the same name.
+Following these steps, we can create a functional relational database based on the given data.
+
+- The system contains a list of 7 objects that require representation in the database. These objects include Location, 
+- Product, User_seller, User_buyer, Bid_buyer, Advertisement, and Interest.
+
+Based on the identified objects, I created table structures for each object. For each table, I determined the required columns and their respective data types. I also specified primary keys and foreign keys as necessary. The table structures that I created are as follows:
+
+    - Location table: includes columns for location_id (primary key), city, latitude, and longitude.
+    - Product table: includes columns for product_id (primary key), brand, model, body_type, transmission, and year.
+    - User_seller table: includes columns for user_id (primary key), name, contact, and location_id.
+    - User_buyer table: includes columns for user_id (primary key), name, contact, and location_id.
+    - Bid_buyer table: includes columns for bid_buyer_id (primary key), user_id_buyer, product_id, bid_price, and date_created.
+    - Advertisement table: includes columns for ad_id (primary key), product_id, user_id, title, description, price_sell, and date_created.
+    - Interest table: includes columns for interest_id (primary key), user_id_buyer, product_id, location_id, and date_created.
+
+## Implementing The Design.
+    
+      The implementation of the database design involves creating seven tables, each corresponding to one of the objects. 
+      - The first table is called dim_location, which contains information about the location of the products, sellers, and buyers. 
+      This table has columns for location_id, city, latitude, and longitude.
+      - The second table is dim_user_seller, which contains information about the sellers. This table has columns for user_id, 
+      name, contact, and location_id, where location_id is a foreign key that references the location table.
+      - The third table is dim_product, which contains information about the products. This table has columns for product_id, 
+      brand, model, body_type, transmission, and year.
 
  <p align="center">
-  <img src="JPEG/Step_1.png" width=700 align="center">
+  <img src="JPEG/ERD1.png" width=700 align="center">
   
  </p>
 
-    2. Next, we create a class called Transaction that contains several methods:
-     To simplify the Transaction class, we will divide its functions into four categories
+    - The fourth table is dim_user_buyer, which contains information about the buyers. This table has columns for user_id, 
+    name, contact, and location_id, where location_id is a foreign key that references the location table.
+    - The fifth table is dim_bid_buyer, which contains information about the bids made by buyers. This table has columns for bid_buyer_id, 
+    user_id_buyer (a foreign key that references the buyer table), product_id (a foreign key that references the product table), bid_price, 
+    and date_created.
+    - The sixth table is fact_advertisement, which contains information about the advertisements created by the sellers. 
+    This table has columns for ad_id, product_id (a foreign key that references the product table), user_id 
+    (a foreign key that references the seller table), title, description, price_sell, and date_created.
+    - The seventh table is fact_interest, which contains information about the interests of the buyers in the products. 
+    This table has columns for interest_id, user_id_buyer (a foreign key that references the buyer table), product_id 
+    (a foreign key that references the product table), location_id (a foreign key that references the location table), and date_created.
+
  <p align="center">
   Create a class named Transaction to define all functions.
  </p>
  <p align="center">
-  <img src="JPEG/Step_2.png" width=700 align="center">
+  <img src="JPEG/ERD2.png" width=700 align="center">
  </p>
 
+    Overall, this implementation provides a well-structured database that is easy to query and analyze. It also ensures that the data is properly organized and related to each other through the use of foreign keys.
+    
     A. Update Function: The 'update_item_name()', 'update_item_qty()', and 'update_item_price()' methods are used 
     to update the name, quantity, and price of an item respectively. These functions take in the item name, 
     quantity, and price as arguments, and update the corresponding attributes of the item.
