@@ -121,7 +121,7 @@ Based on the identified objects, I created table structures for each object. For
     (a foreign key that references the location table), and date_created.
 
  <p align="center">
-  Create a class named Transaction to define all functions.
+  SQL Script for Creating Customer Table in ERD.
  </p>
  <p align="center">
   <img src="JPEG/ERD2.png" width=700 align="center">
@@ -164,7 +164,7 @@ Based on the identified objects, I created table structures for each object. For
     database. The cursor object is used to send queries and retrieve results from the database.
 
  <p align="center">
-  Print Transaction - Insert Table Function
+    Generating Fake Data for Dim_User_Seller and Dim_User_Buyer Tables
  </p>
  <p align="center">
   <img src="JPEG/JP2.png" width=700 align="center">
@@ -182,7 +182,8 @@ Based on the identified objects, I created table structures for each object. For
     The conn.commit() function is called after each iteration of the loop to save the alterations to the database.
 
  <p align="center">
-  Output App
+    Generating Fake Data fact_advertisement
+
  </p>
  <p align="center">
   <img src="JPEG/JP3.png" width=500 align="center">
@@ -197,7 +198,7 @@ Based on the identified objects, I created table structures for each object. For
     the script generates fake data such as interest_id, user_id_buyer, product_id, location_interest, and date_created. 
 
  <p align="center">
-  Output App
+  Generating Fake Data 
  </p>
  <p align="center">
   <img src="JPEG/JP4.png" width=500 align="center">
@@ -207,50 +208,64 @@ Based on the identified objects, I created table structures for each object. For
     Finally, the script commits the changes and closes the connection to the database.
 
 
-## Retrieve Data Project
-    The output of the app is a transaction order that shows the list of items, quantities, prices, and the total price 
-    of the order after the discount has been applied.
+## Transactional  Query  Project
+   At this stage, we are asked to provide an insight by finding the nearest used car based on a city ID, 
+   where the closest distance is calculated based on latitude and longitude. The distance calculation can be 
+   done using the Euclidean distance formula based on latitude and longitude.
+   
+   The expected result is to calculate the nearest distance to find the closest car to the city ID 3173. 
+   To do this, we need to obtain the latitude and longitude values of the used car dealerships and calculate 
+   the Euclidean distance between them and the city ID 3173. The dealership with the shortest distance 
+   will be considered the closest to the city.
 
-    The first step is to input the data related to the item name, quantity, and price. 
-    Then, there will be an option to add more items or not. If yes, you can add additional items. 
-    
  <p align="center">
-  Input Item Orders , Qty and Price
+   Nearest used car based on a city ID
  </p>
  <p align="center">
   <img src="JPEG/Analytical5.png" width=400 align="center">
  </p>
     
-        Test 2
-      - Turns out the Customer made a mistake in purchasing one of the items from the added items, so the 
-      - Customer uses the delete_item() method to remove the item. The item that the Customer wants to remove is Pasta Gigi.
+ ## Analytical   Query  Project
+    In this code snippet, we are comparing the prices of cars based on the average price per city. 
+    The query retrieves the city, brand, model, and year of the car from the fact_advertisement table. 
+    It then joins this table with the dim_product, dim_user_seller, and dim_location tables using their respective keys.
+    
+    To calculate the average price per city, the query uses the AVG() window function over the partition 
+    of the city column. This means that the average price is calculated for each city separately. 
+    The result is then ordered in descending order based on the car's year.
 
  <p align="center">
-  Modify/Delete the items
+  Query Compare Car Prices Based on Average Price per City
  </p>
  <p align="center">
   <img src="JPEG/ALQuery2.png" width=500 align="center">
  </p>
     
   <p align="center">
-  The item/order has been updated or deleted.
+  Output Query
  </p>
  <p align="center">
   <img src="JPEG/AL-2.png" width=500 align="center">
  </p>
 
-    After that, your order will be confirmed whether it is correct or not. If it is not correct, you can reset your order. 
-    If it is correct, the next step is to print the transaction result. However, before printing the transaction, 
+    This code snippet compares the percentage difference between the average price of cars based on their models and 
+    the average bid price offered by customers in the last 6 months.
+    The query uses common table expressions (CTE) to calculate the average price of cars and the average bid price 
+    for each car model. The first CTE calculates the average price of cars using the fact_advertisement table, and 
+    the second CTE calculates the average bid price offered by customers in the last 6 months using the dim_bid_buyer table.
+    
+    The main query then joins these two CTEs using the model column and calculates the difference and percentage 
+    difference between the average price and the average bid price. The result is then ordered by the car brand.
 
   <p align="center">
-  Final Output Print Transaction and the data will be saved to the database.
+  Query Compare the Percentage Difference Between Average Car Prices and Average Bid Prices.
  </p>
  <p align="center">
   <img src="JPEG/ALQuery4.png" width=500 align="center">
  </p>
 
   <p align="center">
-  Final Output Print Transaction and the data will be saved to the database.
+ Output Compare the Percentage Difference Between Average Car Prices and Average Bid Prices.
  </p>
  <p align="center">
   <img src="JPEG/AL-4.png" width=500 align="center">
