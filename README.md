@@ -4,7 +4,7 @@
 **This is a part or journey of the Pacmann bootcamp**
 
 <p align="center">
-  <img src="JPEG/Header.png" width=800 align="center">
+  <img src="JPEG/Header.jpg" width=800 align="center">
 </p>
 <h1 align="center">Hi Mate👋, I am Rahmad Gunawan 
 from SDE Batch 01 Pacmann</h1>
@@ -21,7 +21,7 @@ By [Rahmad Gunawan](https://www.linkedin.com/in/ragunnn/)
 </p>
 
 <center><h2><b>Relational Database & SQL Project!</b></h2></center>
-<p align="center">Creating an ERD for a used car marketplace database to inform the data model and drawing insights from the data to understand the marketplace better...</p>
+<p align="center">Creating an ERD for a used car marketplace database to inform the data model and drawing insights from the data to understand the marketplace better</p>
 
 ## Project Overview: Used Car Marketplace Database
 
@@ -35,19 +35,17 @@ Overall, this project aims to create a robust database schema and use the data t
 
 ## Feature Requirements
 ---
-    - Customer creates a transaction ID by creating an object from the "transaction()" function.
-    - Customer inputs the name of the item, quantity, and price of the product by using the "add_item()" method.
-    - Customer can update the name, quantity, or price of an item using the "update_item_name()", "update_item_qty()", 
-    or "update_item_price()" methods.
-    - Customer can delete an item using the "delete_item()" method.
-    - Customer can reset the entire transaction by using the "reset_transaction()" method.
-    - Customer can check their order using the "check_order()" method, which will return a message indicating 
-    if there are any errors in the input data and output the purchased items.
-    - Customer can check the total cost of their purchase using the "check_out()" method, which will apply 
-    discounts based on the total price and save the transaction data into an SQLite database.
-    - The transaction data saved into the database will include the transaction ID, item name, quantity, price, 
-    total price, discount, and discounted price.
-    - Additional features can be added as needed to improve the system.
+    - User Profile: The application should allow users to offer more than one used car for sale. Before selling, 
+    users must complete their personal information, including name, contact information, and location.
+    - Product Listings: Users can post their car for sale on the platform, and the listing should include product details 
+    such as make, model, body type, transmission type, and year of manufacture. Optional information like color and mileage can also be added.
+    - Search Functionality: Users can search for available cars based on the seller's location, make, and body type
+    - Bidding Feature: If the seller allows the bidding feature, potential buyers can make a bid on the product.
+    - Ad Display: The platform should display ads with product information, titles, and seller contacts.
+    - Entity-Relationship Diagram (ERD): The project should include the creation of an ERD for the database schema.
+    - Insights: The project should involve drawing insights from the data to understand the used car marketplace better.
+    - Scope: The project should not include developing a payment or transaction system since the transactions for 
+    purchasing a car will be conducted outside of the platform.
 
  ## Here's how to use the program:
    
