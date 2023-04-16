@@ -127,12 +127,14 @@ Based on the identified objects, I created table structures for each object. For
   <img src="JPEG/ERD2.png" width=700 align="center">
  </p>
 
-    Overall, this implementation provides a well-structured database that is easy to query and analyze. It also ensures that the data is properly organized and related to each other through the use of foreign keys.
+    Overall, this implementation provides a well-structured database that is easy to query and analyze. 
+    It also ensures that the data is properly organized and related to each other through the use of foreign keys.
 
 ## Populating the database
 
-    The first step in populating the database is to insert the provided data for the dim_location and dim_product tables, 
-    which are in CSV format. We can use the script below to insert the data. Once the data is available, we will generate additional data using Faker.
+    The first step in populating the database is to insert the provided data for the dim_location and dim_product 
+    tables, which are in CSV format. We can use the script below to insert the data. Once the data is available, 
+    we will generate additional data using Faker.
 
  <p align="center">
   Insert Data dim_location and dim_product
@@ -142,39 +144,42 @@ Based on the identified objects, I created table structures for each object. For
   <img src="JPEG/Copy_data.png" width=700 align="center">
  </p>
 
-     B. Delete-Reset Function: The 'delete_item()' method is used to delete an item from the 'items' list, 
-      and the 'reset_transaction()' method is used to reset the transaction by clearing the 'items' list.
-
-        - The 'delete_item()' method is used to delete an item from the 'items' list.
-        - The 'reset_transaction()' method is used to reset the transaction by clearing the 'items' list.
+## Generate Data using Faker
+     The next step is to generate data using faker. The entire data that needs to be generated is 
+     already provided in a Jupyter notebook file, which just needs to be executed. The notebook file 
+     is located in the ipynb folder. The following steps will be taken:
 
  <p align="center">
-  Check-order/out Function
+  Importing Modules and Establishing Connection to PostgreSQL using Psycopg2
  </p>
  <p align="center">
-  <img src="JPEG/Step_4.png" width=700 align="center">
+  <img src="JPEG/JP1.png" width=700 align="center">
  </p>
 
-    C. Check-order/out Function: 
-        -  The 'check_order()' method is used to check the order. If there is an error in the input data, 
-        it will return an error message. If there is no error, it will return a success message.
-        - The 'check_out()' method is used to calculate the total price and discount given. The total price 
-        and discount are calculated based on the total price of the items that have been inputted.
-         A discount is given if the total price is greater than 200000, 300000, or 500000.
+    - This Python code snippet imports the psycopg2, random, time, and Faker modules to connect to a PostgreSQL 
+    database and generate fake data using the id_ID locale. The psycopg2 library is used to establish a connection 
+    to the database by specifying the host name, port number, database name, username, and password.
+    
+    Once the connection is established, a cursor object cur is created to execute SQL commands on the connected 
+    database. The cursor object is used to send queries and retrieve results from the database.
 
  <p align="center">
   Print Transaction - Insert Table Function
  </p>
  <p align="center">
-  <img src="JPEG/Step_5.png" width=700 align="center">
+  <img src="JPEG/JP2.png" width=700 align="center">
  </p>
 
-    D. Print Transaction Function and Insert to Table: The 'print_transaction()' method is used to print the 
-    transaction to the screen in a table format. It displays the item name, quantity, price, total price, 
-    discount, and price after discount for each item in the transaction.
-      - The 'print_transaction()' method is used to print the transaction to the screen in a table format.
-      - The 'insert_to_table()' method is used to save the transaction to the 'transaction' table in the SQLite database. 
-      In this method, each item that has been inputted will be saved to the 'transaction' table along with the quantity of the item, the item price, the total price, the discount, and the price after the discount.
+    - The code snippet inserts fabricated data into two tables, dim_user_seller and dim_user_buyer, within 
+    a PostgreSQL database. A pre-defined list of location IDs is utilized to produce random locations for both 
+    sellers and buyers. The code employs a for loop to produce 100 counterfeit records for each table.
+    
+    Inside the loop, the fake.name() and fake.phone_number() functions are invoked to create random names 
+    and phone numbers, respectively. The random.choice() function is used to randomly choose a location ID 
+    from the pre-defined list.
+    
+    The fake data is then inserted into the dim_user_seller and dim_user_buyer tables using the cur.execute() function. 
+    The conn.commit() function is called after each iteration of the loop to save the alterations to the database.
 
  <p align="center">
   Output App
