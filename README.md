@@ -185,18 +185,29 @@ Based on the identified objects, I created table structures for each object. For
   Output App
  </p>
  <p align="center">
-  <img src="JPEG/Output4.png" width=500 align="center">
+  <img src="JPEG/JP3.png" width=500 align="center">
  </p>
  
-      5. By using these functions, we can easily update, delete, check out, and print the transaction. To create a Transaction object, we can simply call the constructor: 'transaksi = Transaction()
+    - Insert data into the fact_advertisement table by executing a loop for 1000 times. In each iteration,
+    the script generates fake data such as ad_id, product_id, user_id, title, description, price_sell,
+    and date_created.
+    - Insert data into the dim_bid_buyer table by executing a loop for 300 times. In each iteration, 
+    the script generates fake data such as bid_buyer_id, user_id_buyer, product_id, bid_price, and date_created. 
+    -Insert data into the fact_interest table by executing a loop for 1000 times. In each iteration, 
+    the script generates fake data such as interest_id, user_id_buyer, product_id, location_interest, and date_created. 
 
-      After creating the Transaction class, we can initialize an object by calling the class constructor: 
-      'transaksi = Transaction()'. 
-      We can then perform various operations on the 'transaksi' object, such as adding an item, updating the name of an item, 
-      updating the quantity of an item, updating the price of an item, deleting an item, resetting the transaction, checking the 
-      order, calculating the total price and discount, printing the transaction, and saving the transaction to the database.
+ <p align="center">
+  Output App
+ </p>
+ <p align="center">
+  <img src="JPEG/JP4.png" width=500 align="center">
+ </p>
 
-## Outcome Project
+    Then, the script constructs an SQL query using the generated data and executes it using a cursor object. 
+    Finally, the script commits the changes and closes the connection to the database.
+
+
+## Retrieve Data Project
     The output of the app is a transaction order that shows the list of items, quantities, prices, and the total price 
     of the order after the discount has been applied.
 
@@ -207,25 +218,25 @@ Based on the identified objects, I created table structures for each object. For
   Input Item Orders , Qty and Price
  </p>
  <p align="center">
-  <img src="JPEG/Output1.png" width=400 align="center">
+  <img src="JPEG/Analytical5.png" width=400 align="center">
  </p>
     
-    If not, there will be a question whether you want to modify/delete the items. 
-    If you choose to modify/delete the items, you can input the item number and choose the option to delete the item, 
-    change the item name, quantity or price.
+        Test 2
+      - Turns out the Customer made a mistake in purchasing one of the items from the added items, so the 
+      - Customer uses the delete_item() method to remove the item. The item that the Customer wants to remove is Pasta Gigi.
 
  <p align="center">
   Modify/Delete the items
  </p>
  <p align="center">
-  <img src="JPEG/Output2.png" width=500 align="center">
+  <img src="JPEG/ALQuery2.png" width=500 align="center">
  </p>
     
   <p align="center">
   The item/order has been updated or deleted.
  </p>
  <p align="center">
-  <img src="JPEG/Output3.png" width=500 align="center">
+  <img src="JPEG/AL-2.png" width=500 align="center">
  </p>
 
     After that, your order will be confirmed whether it is correct or not. If it is not correct, you can reset your order. 
@@ -235,88 +246,14 @@ Based on the identified objects, I created table structures for each object. For
   Final Output Print Transaction and the data will be saved to the database.
  </p>
  <p align="center">
-  <img src="JPEG/Output4.png" width=500 align="center">
- </p>
-
-    it will be checked whether the input format is correct or not. If it is correct, 
-    it will print the message "order is correct" and print the transaction data along with the total price of the order.
-
-## Test Case
-      In this stage, the app will be tested to generate output that meets the given requirements.
-      
-      Test 1
-      - "Customers want to add two new items using the add_item() method. The items to be added are as follows:
-      - Item Name: Fried Chicken, Qty: 2, Price: 20000
-      - Item Name: Toothpaste, Qty: 3, Price: 15000"
-
-  <p align="center">
-  Expected Output Test 1
- </p>
- <p align="center">
-  <img src="JPEG/ExpectedOT1.png" width=400 align="center">
- </p>
-
- 
-  <p align="center">
-  Result Test 1 (Pass)
- </p>
- <p align="center">
-  <img src="JPEG/Result1.png" width=400 align="center">
- </p>
-    
-
-      Test 2
-      - Turns out the Customer made a mistake in purchasing one of the items from the added items, so the 
-      - Customer uses the delete_item() method to remove the item. The item that the Customer wants to remove is Pasta Gigi.
-
-  <p align="center">
-  Expected Output Test 2
- </p>
- <p align="center">
-  <img src="JPEG/ExpectedOT2.png" width=400 align="center">
+  <img src="JPEG/ALQuery4.png" width=500 align="center">
  </p>
 
   <p align="center">
-  Result Test 2 (Pass)
+  Final Output Print Transaction and the data will be saved to the database.
  </p>
  <p align="center">
-  <img src="JPEG/Result2.png" width=400 align="center">
- </p>
-
-      Test 3
-      - After further consideration, the Customer realizes that they have inputted the wrong items to be purchased! Instead of 
-      - deleting them one by one, the Customer simply uses the reset_transaction() method to remove all the items that have been added."
-
-  <p align="center">
-  Expected Output Test 3
- </p>
- <p align="center">
-  <img src="JPEG/ExpectedOT3.png" width=400 align="center">
- </p>
-
-  <p align="center">
-  Result Test 3 (Pass)
- </p>
- <p align="center">
-  <img src="JPEG/Result3.png" width=400 align="center">
- </p>
-
-      Test 4
-      - After finishing the shopping, the Customer will calculate the total amount to be paid using the method check_out()
-      - Before displaying the total amount, the items purchased will be displayed.
-
-  <p align="center">
-  Expected Output Test 4
- </p>
- <p align="center">
-  <img src="JPEG/ExpectedOT4.png" width=400 align="center">
- </p>
-
-  <p align="center">
-  Result Test 4 (Pass)
- </p>
- <p align="center">
-  <img src="JPEG/Result4.png" width=400 align="center">
+  <img src="JPEG/AL-4.png" width=500 align="center">
  </p>
 
 ## Developed By
