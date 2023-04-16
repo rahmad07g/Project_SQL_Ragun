@@ -49,16 +49,18 @@ Overall, this project aims to create a robust database schema and use the data t
 
  ## Here's how to use the program:
    
-    - Download all Python files/modules into a local directory.
-    - Open your terminal and navigate to the local directory.
-    - Run the Python script by typing "python script.py" in the terminal.
-    - Follow the prompts to input your order details.
-    - Enjoy using the program!
+    - Download the SQL files and Table_Design script to your local directory.
+    - Open your preferred SQL client and navigate to the local directory.
+    - Run the Table_Design script to create the table schema by executing the DDL commands.
+    - Use the faker library to generate data that matches the table schema by running the Jupyter notebook file that contains the data input code.
+    - Once you have generated the necessary data, run the Transactional Query and Analytical Query scripts to extract insights from the data.
+    - Follow the prompts in the scripts to input the required details for the queries.
+    - Enjoy analyzing the data and gaining insights from the project!
 
- ## Program Flow
+ ## ERD Table Design
 
   <p align="center">
-  <img src="JPEG/Flowchart.png" width=700 align="center">
+  <img src="ERD.png" width=700 align="center">
   
  </p>
 
