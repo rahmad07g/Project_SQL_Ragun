@@ -60,7 +60,7 @@ Overall, this project aims to create a robust database schema and use the data t
  ## ERD Table Design
 
   <p align="center">
-  <img src="ERD.png" width=700 align="center">
+  <img src="JPEG/ERD.png" width=700 align="center">
   
  </p>
  
