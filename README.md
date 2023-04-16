@@ -10,10 +10,10 @@
 from SDE Batch 01 Pacmann</h1>
 <h3 align="center">Relational Database & SQL Project</h3>
 
-By [Rahmad Gunawan](https://www.linkedin.com/in/ragunnn/)
+By [Medium Rahmad Gunawan](https://rahmad07g.medium.com/designing-and-implementing-a-relational-database-for-a-used-car-marketplace-89983a824305)
 ## Dashboard
 <p align="center">
-  <a href="https://youtu.be/Uycz73DydLM">
+  <a href="https://youtu.be/kDVYIZBstxk">
     <img src="https://www.logo.wine/a/logo/YouTube/YouTube-Logo.wine.svg" alt="Youtube Logo" width="120" height="120">
     <br>
     <b>Youtube Presentation</b>
