@@ -60,7 +60,7 @@ Overall, this project aims to create a robust database schema and use the data t
  ## ERD Table Design
 
   <p align="center">
-  <img src="ERD.jpg" width=700 align="center">
+  <img src="ERD.png" width=700 align="center">
   
  </p>
  
@@ -107,17 +107,18 @@ Based on the identified objects, I created table structures for each object. For
   
  </p>
 
-    - The fourth table is dim_user_buyer, which contains information about the buyers. This table has columns for user_id, 
-    name, contact, and location_id, where location_id is a foreign key that references the location table.
-    - The fifth table is dim_bid_buyer, which contains information about the bids made by buyers. This table has columns for bid_buyer_id, 
-    user_id_buyer (a foreign key that references the buyer table), product_id (a foreign key that references the product table), bid_price, 
-    and date_created.
-    - The sixth table is fact_advertisement, which contains information about the advertisements created by the sellers. 
-    This table has columns for ad_id, product_id (a foreign key that references the product table), user_id 
-    (a foreign key that references the seller table), title, description, price_sell, and date_created.
-    - The seventh table is fact_interest, which contains information about the interests of the buyers in the products. 
-    This table has columns for interest_id, user_id_buyer (a foreign key that references the buyer table), product_id 
-    (a foreign key that references the product table), location_id (a foreign key that references the location table), and date_created.
+    - The fourth table is dim_user_buyer, which contains information about the buyers. This table has columns 
+    for user_id, name, contact, and location_id, where location_id is a foreign key that references the location table.
+    - The fifth table is dim_bid_buyer, which contains information about the bids made by buyers. 
+    This table has columns for bid_buyer_id, user_id_buyer (a foreign key that references the buyer table), 
+    product_id (a foreign key that references the product table), bid_price, and date_created.
+    - The sixth table is fact_advertisement, which contains information about the advertisements created by 
+    the sellers. This table has columns for ad_id, product_id (a foreign key that references the product table), 
+    user_id  (a foreign key that references the seller table), title, description, price_sell, and date_created.
+    - The seventh table is fact_interest, which contains information about the interests of the buyers 
+    in the products. This table has columns for interest_id, user_id_buyer (a foreign key that references 
+    the buyer table), product_id  (a foreign key that references the product table), location_id 
+    (a foreign key that references the location table), and date_created.
 
  <p align="center">
   Create a class named Transaction to define all functions.
@@ -127,25 +128,18 @@ Based on the identified objects, I created table structures for each object. For
  </p>
 
     Overall, this implementation provides a well-structured database that is easy to query and analyze. It also ensures that the data is properly organized and related to each other through the use of foreign keys.
-    
-    A. Update Function: The 'update_item_name()', 'update_item_qty()', and 'update_item_price()' methods are used 
-    to update the name, quantity, and price of an item respectively. These functions take in the item name, 
-    quantity, and price as arguments, and update the corresponding attributes of the item.
 
-        Definition : 
-        - The 'init()' method is used to initialize an object of the class. In this method, 
-          we initialize the 'items' attribute as an empty list.
-        - The 'add_item()' method is used to add an item to the 'items' list.
-        - The 'update_item_name()' method is used to update the name of an item.
-        - The 'update_item_qty()' method is used to update the quantity of an item.
-        - The 'update_item_price()' method is used to update the price of an item.
+## Populating the database
+
+    The first step in populating the database is to insert the provided data for the dim_location and dim_product tables, 
+    which are in CSV format. We can use the script below to insert the data. Once the data is available, we will generate additional data using Faker.
 
  <p align="center">
-  Delete - Reset - Function
+  Insert Data dim_location and dim_product
  </p>
 
  <p align="center">
-  <img src="JPEG/Step_3.png" width=700 align="center">
+  <img src="JPEG/Copy_data.png" width=700 align="center">
  </p>
 
      B. Delete-Reset Function: The 'delete_item()' method is used to delete an item from the 'items' list, 
