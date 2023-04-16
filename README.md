@@ -1,6 +1,6 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=8273679&assignment_repo_type=AssignmentRepo)
 
-# Python Project Pacmann - Super Cashier!
+# SQL Project Pacmann - Super Cashier!
 **This is a part or journey of the Pacmann bootcamp**
 
 <p align="center">
@@ -20,12 +20,18 @@ By [Rahmad Gunawan](https://www.linkedin.com/in/ragunnn/)
   </a>
 </p>
 
-<center><h2><b>Super Cashier!</b></h2></center>
-<p align="center">Super Cashier! is a simple app system that allows customers to input purchased items, quantity, and price. Additionally, it offers other features like payment options and remote purchasing.</p>
+<center><h2><b>Relational Database & SQL Project!</b></h2></center>
+<p align="center">Creating an ERD for a used car marketplace database to inform the data model and drawing insights from the data to understand the marketplace better...</p>
 
-## Introduction
+## Project Overview: Used Car Marketplace Database
 
-The project is to create a self-service checkout system for Andi's large supermarket in Indonesia. The system will allow customers to input purchased items, quantity, and price. Other features like payment options and remote purchasing will be developed. The challenge is finding a programmer to develop the system to meet the supermarket's needs.
+This project aims to create an entity-relationship diagram (ERD) for a used car marketplace database. The ERD will serve as the foundation for the database schema and will be used to inform the creation of the data model. In addition, insights will be drawn from the data to better understand the used car marketplace and inform future business decisions.
+
+The database will include tables for cars, sellers, buyers, transactions, and bidding history. The cars table will contain information such as the make, model, year, price, and location of the car. The sellers table will include information such as the seller's name, contact information, and the cars they have for sale. The buyers table will contain information such as the buyer's name and contact information. The transactions table will include information such as the sale price, date, and payment method. Finally, the bidding history table will contain information about the bidding history of each car.
+
+The insights drawn from the data will include patterns in car sales, popular models and makes, and average prices. This information can be used to better understand the used car marketplace and inform future business decisions such as pricing strategies, marketing campaigns, and inventory management.
+
+Overall, this project aims to create a robust database schema and use the data to draw insights that can inform business decisions for a used car marketplace.
 
 ## Feature Requirements
 ---
